@@ -1,25 +1,26 @@
 ﻿using UnityEngine;
-
-public enum SelectionAreaType
-{
-    Fruit,
-    Alcohol,
-    NonAlcohol
-}
-
+using UnityEngine.Events;
 [RequireComponent(typeof(BoxCollider))]
 public class SelectionArea : MonoBehaviour {
+    public UnityAction<Ingredient> OnEnteredSelectionArea;
 
     [SerializeField]
-    private SelectionAreaType AreaType;
+    private Ingredient[] m_PossibleIngredients;
+
+    private Ingredient m_CurrentIngredient;
+
+    public void ChooseRandomIngredient()
+    {
+        int randomIngredientID = Random.Range(0, m_PossibleIngredients.Length);
+        m_CurrentIngredient = m_PossibleIngredients[randomIngredientID];
+    }
 
     private void OnTriggerEnter(Collider other)
     {
-        // TODO
+        if(null != OnEnteredSelectionArea)
+        {
+            OnEnteredSelectionArea.Invoke(m_CurrentIngredient);
+        }
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        //TODO
-    }
 }

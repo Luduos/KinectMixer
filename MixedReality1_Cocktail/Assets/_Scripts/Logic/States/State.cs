@@ -5,8 +5,20 @@ public abstract class State : MonoBehaviour {
     private LogicManager logicManager;
     protected LogicManager LogicManager { get { return logicManager; } set { logicManager = value; } }
     
-    public virtual void OnEnter(LogicManager logicManager)
+    /// <summary>
+    /// Called when entering the state
+    /// </summary>
+    /// <param name="logicManager">Logicmanager calling and managing this state</param>
+    public virtual void OnEnterState(LogicManager logicManager)
     {
         this.logicManager = logicManager;
+    }
+
+    /// <summary>
+    /// Called when leaving the state.
+    /// </summary>
+    protected virtual void OnLeaveState()
+    {
+
     }
 }

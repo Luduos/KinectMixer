@@ -5,8 +5,60 @@ public class SelectIngredientsState : State
     [SerializeField]
     private SelectionArea[] m_SelectionAreas;
 
-    public override void OnEnter(LogicManager logicManager)
+    [SerializeField]
+    private int m_NumberOfSelectableIngredients = 3;
+
+    private int m_CurrentNumberOfSelectedIngredients = 0;
+
+    private Ingredient[] m_SelectedIngredients;
+
+    private void Start()
     {
-        base.OnEnter(logicManager);
+        ShuffleIngredientsInSelectionArea();
+
+        // Register function listening to event, when player enters seleciton area
+        foreach (SelectionArea area in m_SelectionAreas)
+        {
+            area.OnSelectedIngredient += OnIngredientWasSelected;
+        }
+
+        m_SelectedIngredients = new Ingredient[m_NumberOfSelectableIngredients];
+    }
+
+    public override void OnEnterState(LogicManager logicManager)
+    {
+        base.OnEnterState(logicManager);
+    }
+
+    protected override void OnLeaveState()
+    {
+        m_CurrentNumberOfSelectedIngredients = 0;
+        LogicManager.IngredientsOfCurrentSession = m_SelectedIngredients;
+
+        LogicManager.Switchstate();
+    }
+
+    /// <summary>
+    /// Selects Random ingredients in every Selection Area
+    /// </summary>
+    private void ShuffleIngredientsInSelectionArea()
+    {
+        foreach(SelectionArea area in m_SelectionAreas)
+        {
+            area.ChooseRandomIngredient();
+        }
+    }
+
+    /// <summary>
+    /// Invoked by SelectionArea, once an ingredient was selected
+    /// </summary>
+    private void OnIngredientWasSelected(Ingredient selectedIngredient)
+    {
+        m_SelectedIngredients[m_CurrentNumberOfSelectedIngredients] = selectedIngredient;
+        m_CurrentNumberOfSelectedIngredients++;
+        if(m_CurrentNumberOfSelectedIngredients == m_NumberOfSelectableIngredients)
+        {
+            OnLeaveState();
+        }
     }
 }

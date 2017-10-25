@@ -5,8 +5,8 @@ licenseType: Pro
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
-  fontSize: 100
-  forceTextureCase: -1
+  fontSize: 1
+  forceTextureCase: -2
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1

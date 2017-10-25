@@ -11,7 +11,14 @@ public class LogicManager : MonoBehaviour {
     public Ingredient[] IngredientsOfCurrentSession
     {
         get { return m_IngredientsOfCurrentSession; }
-        set { m_IngredientsOfCurrentSession = value; }
+        set
+        {
+            m_IngredientsOfCurrentSession = value;
+            foreach(Ingredient i in m_IngredientsOfCurrentSession)
+            {
+                print("Selected: " + i.m_Name + "\n");
+            }
+        }
     }
 
     void Start ()

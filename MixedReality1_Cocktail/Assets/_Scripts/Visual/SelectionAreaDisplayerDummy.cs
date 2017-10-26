@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 
 public class SelectionAreaDisplayerDummy : SelectionAreaDisplayer
 {
@@ -11,6 +10,12 @@ public class SelectionAreaDisplayerDummy : SelectionAreaDisplayer
     public override void DisplayIngredient(Ingredient toDisplay)
     {
         m_SpriteRenderer.sprite = toDisplay.m_Sprite;
+        m_Text.text = toDisplay.m_Name;
+    }
+
+    public override void DisplayMixingMotion(MixingMotion toDisplay)
+    {
+        m_SpriteRenderer.sprite = toDisplay.m_DescriptionSprite;
         m_Text.text = toDisplay.m_Name;
     }
 

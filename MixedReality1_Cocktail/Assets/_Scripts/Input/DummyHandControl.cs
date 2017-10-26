@@ -5,7 +5,7 @@ public class DummyHandControl : MonoBehaviour {
     [SerializeField]
     private float m_MovementSpeed = 1.0f;
 
-	void FixedUpdate () {
+	void Update () {
         if (Input.GetKey(KeyCode.W))
         {
             transform.position += new Vector3(0, m_MovementSpeed * Time.deltaTime, 0);

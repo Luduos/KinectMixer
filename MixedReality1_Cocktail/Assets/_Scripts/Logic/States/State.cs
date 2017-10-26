@@ -17,8 +17,5 @@ public abstract class State : MonoBehaviour {
     /// <summary>
     /// Called when leaving the state.
     /// </summary>
-    protected virtual void OnLeaveState()
-    {
-
-    }
+    protected abstract void OnLeaveState();
 }

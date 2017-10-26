@@ -2,11 +2,9 @@
 
 public class SelectIngredientsState : State
 {
+    [Tooltip("How many ingredients can the player choose, before switching over to the mixing motions?")]
     [SerializeField]
-    private SelectionArea[] m_SelectionAreas;
-
-    [SerializeField]
-    private int m_NumberOfSelectableIngredients = 3;
+    private int m_NumberOfIngredientChoices = 3;
 
     private int m_CurrentNumberOfSelectedIngredients = 0;
 
@@ -15,34 +13,34 @@ public class SelectIngredientsState : State
     private void Start()
     {
         // Register function listening to event, when player enters seleciton area
-        foreach (SelectionArea area in m_SelectionAreas)
+        foreach (SelectionArea area in LogicManager.SelectionAreas)
         {
             area.OnAreaWasSelected += OnIngredientWasSelected;
         }
 
-        m_SelectedIngredients = new Ingredient[m_NumberOfSelectableIngredients];
+        m_SelectedIngredients = new Ingredient[m_NumberOfIngredientChoices];
     }
 
     public override void OnEnterState(LogicManager logicManager)
     {
         base.OnEnterState(logicManager);
         ShuffleIngredientsInSelectionArea();
-        ActivateSelectionAreas(true);
+        ActivateIngredientSelection(true);
     }
 
     protected override void OnLeaveState()
     {
         m_CurrentNumberOfSelectedIngredients = 0;
-        ActivateSelectionAreas(false);
+        ActivateIngredientSelection(false);
         LogicManager.IngredientsOfCurrentSession = m_SelectedIngredients;
         LogicManager.Switchstate();
     }
 
-    private void ActivateSelectionAreas(bool enabled)
+    private void ActivateIngredientSelection(bool enabled)
     {
-        foreach (SelectionArea area in m_SelectionAreas)
+        foreach (SelectionArea area in LogicManager.SelectionAreas)
         {
-            area.gameObject.SetActive(enabled);
+            area.EnableCollider(enabled);
         }
     }
 
@@ -51,7 +49,7 @@ public class SelectIngredientsState : State
     /// </summary>
     private void ShuffleIngredientsInSelectionArea()
     {
-        foreach(SelectionArea area in m_SelectionAreas)
+        foreach(SelectionArea area in LogicManager.SelectionAreas)
         {
             area.ChooseRandomIngredient();
         }
@@ -65,7 +63,7 @@ public class SelectIngredientsState : State
         m_SelectedIngredients[m_CurrentNumberOfSelectedIngredients] = selectedIngredient;
         m_CurrentNumberOfSelectedIngredients++;
         ShuffleIngredientsInSelectionArea();
-        if (m_CurrentNumberOfSelectedIngredients == m_NumberOfSelectableIngredients)
+        if (m_CurrentNumberOfSelectedIngredients == m_NumberOfIngredientChoices)
         {
             OnLeaveState();
         }

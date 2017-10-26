@@ -7,4 +7,9 @@ public class DisplayResultState : State
     {
         base.OnEnterState(logicManager);
     }
+
+    protected override void OnLeaveState()
+    {
+        throw new System.NotImplementedException();
+    }
 }

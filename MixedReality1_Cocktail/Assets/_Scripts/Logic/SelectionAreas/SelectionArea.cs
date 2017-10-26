@@ -48,9 +48,28 @@ public class SelectionArea : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// Activates / deactivates collider. If deactivated, player cannot select an ingredient
+    /// by putting his hand / foot inside the collision box anymore.
+    /// </summary>
+    /// <param name="enable"></param>
+    public void EnableCollider(bool enable)
+    {
+        if(null != m_SelectionCollider)
+        {
+            m_SelectionCollider.gameObject.SetActive(enable);
+        }
+    }
+
+    /// <summary>
+    /// Called (by SellectionCollision), if an Ingredient was selected
+    /// </summary>
     public void IngredientWasSelected()
     {
-        OnAreaWasSelected.Invoke(m_CurrentIngredient);
+        if(null != OnAreaWasSelected)
+        {
+            OnAreaWasSelected.Invoke(m_CurrentIngredient);
+        }
     }
 
     /// <summary>
@@ -62,5 +81,14 @@ public class SelectionArea : MonoBehaviour {
         m_CurrentIngredient = m_PossibleIngredients[randomIngredientID];
 
         m_SelectionAreaDisplayer.DisplayIngredient(m_CurrentIngredient);
+    }
+
+    /// <summary>
+    /// Relays mixingmotion-display request to the area displayer
+    /// </summary>
+    /// <param name="toDisplay"></param>
+    public void DisplayMotion(MixingMotion toDisplay)
+    {
+        m_SelectionAreaDisplayer.DisplayMixingMotion(toDisplay);
     }
 }

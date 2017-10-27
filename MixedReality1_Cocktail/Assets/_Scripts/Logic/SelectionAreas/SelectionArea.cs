@@ -10,22 +10,26 @@ public class SelectionArea : MonoBehaviour {
     private SelectionAreaDisplayer m_SelectionAreaDisplayer;
 
     [SerializeField]
-    private float m_TimeToSelect = 2.0f;
-
-    private float m_CurrentTimeInArea = 0.0f;
-
-    [SerializeField]
     private Ingredient[] m_PossibleIngredients;
 
     private Ingredient m_CurrentIngredient;
 
-    public float TimeToSelect
+    private float m_TimeUntilSelected = 2.0f;
+
+    public float TimeUntilSelected
     {
         get
         {
-            return m_TimeToSelect;
+            return m_TimeUntilSelected;
+        }
+
+        set
+        {
+            m_TimeUntilSelected = value;
         }
     }
+
+    private float m_CurrentTimeInArea = 0.0f;
 
     public float CurrentTimeInArea
     {

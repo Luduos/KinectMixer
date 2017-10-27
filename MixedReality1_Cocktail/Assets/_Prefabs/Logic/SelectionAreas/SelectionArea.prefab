@@ -228,7 +228,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_SelectionCollider: {fileID: 114552769165032356}
   m_SelectionAreaDisplayer: {fileID: 114927314743109144}
-  m_TimeToSelect: 2
+  m_TimeToSelect: 1
   m_PossibleIngredients:
   - m_Name: Banana
     m_Sprite: {fileID: 21300000, guid: 3ac490d45f89c45498a5054bbb1a9454, type: 3}

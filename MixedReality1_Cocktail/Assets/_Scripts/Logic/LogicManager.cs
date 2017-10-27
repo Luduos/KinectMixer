@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System;
 
 public class LogicManager : MonoBehaviour {
 
@@ -22,38 +23,21 @@ public class LogicManager : MonoBehaviour {
         }
     }
 
-#region CurrentSessionInfo
-    private Ingredient[] m_IngredientsOfCurrentSession;
+    private SessionInformation m_CurrentSessionInfo;
 
-    public Ingredient[] IngredientsOfCurrentSession
-    {
-        get { return m_IngredientsOfCurrentSession; }
-        set
-        {
-            m_IngredientsOfCurrentSession = value;
-            foreach(Ingredient i in m_IngredientsOfCurrentSession)
-            {
-                print("Selected Ingredient: " + i.m_Name + "\n");
-            }
-        }
-    }
-
-    private MixingMotion m_MotionOfCurrentSession;
-
-    public MixingMotion MotionOfCurrentSession
+    public SessionInformation CurrentSessionInfo
     {
         get
         {
-            return m_MotionOfCurrentSession;
+            return m_CurrentSessionInfo;
         }
 
         set
         {
-            m_MotionOfCurrentSession = value;
-            print("Selected Motion: " + m_MotionOfCurrentSession.m_Name + "\n");
+            m_CurrentSessionInfo = value;
         }
     }
-#endregion
+
 
     void Start ()
     {
@@ -67,6 +51,44 @@ public class LogicManager : MonoBehaviour {
     {
         m_CurrentStateID = (m_CurrentStateID + 1) % m_States.Length;
         m_States[m_CurrentStateID].OnEnterState(this);
+    }
+
+    
+
+    /// <summary>
+    /// Activate / Deactivate Selection areas. Deactivated Selection areas will not be rendered
+    /// or updated.
+    /// </summary>
+    /// <param name="activated"></param>
+    public void ActivateSelectionAreas(bool activated)
+    {
+        foreach(SelectionArea currentArea in m_SelectionAreas)
+        {
+            currentArea.gameObject.SetActive(activated);
+        }
+    }
+}
+
+[Serializable]
+public struct SessionInformation
+{
+    public Ingredient[] IngredientsOfSession;
+    public MixingMotion MotionOfSession;
+
+    public override string ToString()
+    {
+        string infoString = "";
+        for(int i = 0; i < IngredientsOfSession.Length; ++i)
+        {
+            Ingredient ingredient = IngredientsOfSession[i];
+            infoString += "Selected Ingredient no " + (i+1) + ":" + ingredient.m_Name + "\n";
+        }
+        string motionName = MotionOfSession.m_Name;
+        if(motionName.Length > 0)
+        {
+            infoString += "Selected Motion: " + motionName;
+        }
+        return infoString;
     }
 }
 

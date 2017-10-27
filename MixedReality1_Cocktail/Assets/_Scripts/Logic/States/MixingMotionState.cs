@@ -15,7 +15,7 @@ public class MixingMotionState : State
         if(null != m_MotionDetector)
         {
             m_MotionDetector.OnMotionSelected += SelectMotion;
-            m_MotionDetector.enabled = false;
+            ActivateMotionDetector(false);
         }
     }
 
@@ -27,7 +27,9 @@ public class MixingMotionState : State
     public override void OnEnterState(LogicManager logicManager)
     {
         base.OnEnterState(logicManager);
-        m_MotionDetector.enabled = true;
+        ActivateMotionDetector(true);
+        LogicManager.ActivateSelectionAreas(true);
+
         SelectionArea[] selectionAreas = logicManager.SelectionAreas;
         for (int i = 0; i < selectionAreas.Length; ++i)
         {
@@ -47,7 +49,9 @@ public class MixingMotionState : State
         bool invalid = motionID >= m_PossibleMixingMotions.Length || motionID < 0;
         if (!invalid)
         {
-            LogicManager.MotionOfCurrentSession = m_PossibleMixingMotions[motionID];
+            SessionInformation info = LogicManager.CurrentSessionInfo;
+            info.MotionOfSession = m_PossibleMixingMotions[motionID];
+            LogicManager.CurrentSessionInfo = info;
             OnLeaveState();
         }
         else
@@ -56,9 +60,22 @@ public class MixingMotionState : State
         }
     }
 
+    /// <summary>
+    /// Activate / Deactivate the motion detector gameobject
+    /// </summary>
+    /// <param name="activated"></param>
+    private void ActivateMotionDetector(bool activated)
+    {
+        if(null != m_MotionDetector)
+        {
+            m_MotionDetector.gameObject.SetActive(activated);
+        }
+    }
+
     protected override void OnLeaveState()
     {
-        m_MotionDetector.enabled = false;
+        ActivateMotionDetector(false);
+        LogicManager.ActivateSelectionAreas(false);
         LogicManager.Switchstate();
     }
 }

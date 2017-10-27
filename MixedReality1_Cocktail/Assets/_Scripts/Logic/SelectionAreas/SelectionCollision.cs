@@ -17,7 +17,7 @@ public class SelectionCollision : MonoBehaviour {
     private void OnTriggerStay(Collider other)
     {
         m_OwningSelectionArea.CurrentTimeInArea += Time.deltaTime;
-        if (m_OwningSelectionArea.CurrentTimeInArea > m_OwningSelectionArea.TimeToSelect)
+        if (m_OwningSelectionArea.CurrentTimeInArea > m_OwningSelectionArea.TimeUntilSelected)
         {
             m_OwningSelectionArea.CurrentTimeInArea = 0.0f;
             m_OwningSelectionArea.IngredientWasSelected();

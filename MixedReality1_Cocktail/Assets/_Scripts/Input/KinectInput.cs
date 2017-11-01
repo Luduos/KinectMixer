@@ -5,9 +5,15 @@ using System.Collections.Generic;
 public class KinectInput : MonoBehaviour {
 
     [SerializeField]
-    private BodySourceManager bodySourceManager;
+    private BodySourceManager m_BodySourceManager = null;
+
+    [SerializeField]
+    private Hand m_KinectHandPrefab = null;
 
     private Dictionary<ulong, GameObject> m_TrackedBodyObjects = new Dictionary<ulong, GameObject>();
+
+    private string leftHandName = "Left Hand";
+    private string rightHandName = "Right Hand";
 
     IList<Body> m_Bodies;
     // Use this for initialization
@@ -67,7 +73,7 @@ public class KinectInput : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        Body[] currentBodies = bodySourceManager.GetData();
+        Body[] currentBodies = m_BodySourceManager.GetData();
 
         if (null == currentBodies)
         {
@@ -138,14 +144,32 @@ public class KinectInput : MonoBehaviour {
     {
         GameObject body = new GameObject("Body:" + id);
 
-        // TODO: Create objects for left and right hand
+        GameObject leftHand = Instantiate(m_KinectHandPrefab.gameObject);
+        leftHand.name = leftHandName;
+        leftHand.transform.parent = body.transform;
+
+        GameObject rightHand = Instantiate(m_KinectHandPrefab.gameObject);
+        rightHand.name = rightHandName;
+        rightHand.transform.parent = body.transform;
 
         return body;
     }
 
+
+
     private void RefreshBodyObject(Body body, GameObject bodyObject)
     {
+        Windows.Kinect.Joint leftHandJoint = body.Joints[JointType.HandLeft];
+        Transform leftHandTransform = bodyObject.transform.Find(leftHandName);
+        leftHandTransform.localPosition = GetVector3FromJoint(leftHandJoint);
 
-        // TODO: Update left and right hand position
+        Windows.Kinect.Joint rightHandJoint = body.Joints[JointType.HandRight];
+        Transform rightHandTransform = bodyObject.transform.Find(rightHandName);
+        rightHandTransform.localPosition = GetVector3FromJoint(rightHandJoint);
+    }
+
+    private static Vector3 GetVector3FromJoint(Windows.Kinect.Joint joint)
+    {
+        return new Vector3(joint.Position.X * 10, joint.Position.Y * 10, joint.Position.Z * 10);
     }
 }

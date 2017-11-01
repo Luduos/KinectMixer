@@ -1,13 +1,14 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 public class SelectionArea : MonoBehaviour {
-    public UnityAction<Ingredient> OnAreaWasSelected;
+    public UnityAction<SelectionArea> OnAreaHoverEnterEvent;
+    public UnityAction<SelectionArea> OnAreaHoverLeaveEvent;
 
     [SerializeField]
     private SelectionCollision m_SelectionCollider;
 
     [SerializeField]
-    private SelectionAreaDisplayer m_SelectionAreaDisplayer;
+    private SelectionAreaDisplayer m_SelectionAreaDisplay;
 
     [SerializeField]
     private Ingredient[] m_PossibleIngredients;
@@ -31,16 +32,29 @@ public class SelectionArea : MonoBehaviour {
 
     private float m_CurrentTimeInArea = 0.0f;
 
-    public float CurrentTimeInArea
+    public SelectionAreaDisplayer SelectionAreaDisplay
     {
         get
         {
-            return m_CurrentTimeInArea;
+            return m_SelectionAreaDisplay;
         }
 
         set
         {
-            m_CurrentTimeInArea = value;
+            m_SelectionAreaDisplay = value;
+        }
+    }
+
+    public Ingredient CurrentIngredient
+    {
+        get
+        {
+            return m_CurrentIngredient;
+        }
+
+        set
+        {
+            m_CurrentIngredient = value;
         }
     }
 
@@ -48,7 +62,7 @@ public class SelectionArea : MonoBehaviour {
     {
         if(null != m_SelectionCollider)
         {
-            m_SelectionCollider.Init(this);
+            m_SelectionCollider.OnSelectionChanged += OnSelectionChanged;
         }
     }
 
@@ -65,14 +79,15 @@ public class SelectionArea : MonoBehaviour {
         }
     }
 
-    /// <summary>
-    /// Called (by SellectionCollision), if an Ingredient was selected
-    /// </summary>
-    public void IngredientWasSelected()
+   private void OnSelectionChanged(bool IsSelected)
     {
-        if(null != OnAreaWasSelected)
+        if (IsSelected)
         {
-            OnAreaWasSelected.Invoke(m_CurrentIngredient);
+            OnAreaHoverEnterEvent.Invoke(this);
+        }
+        else
+        {
+            OnAreaHoverLeaveEvent.Invoke(this);
         }
     }
 
@@ -82,17 +97,8 @@ public class SelectionArea : MonoBehaviour {
     public void ChooseRandomIngredient()
     {
         int randomIngredientID = Random.Range(0, m_PossibleIngredients.Length);
-        m_CurrentIngredient = m_PossibleIngredients[randomIngredientID];
+        CurrentIngredient = m_PossibleIngredients[randomIngredientID];
 
-        m_SelectionAreaDisplayer.DisplayIngredient(m_CurrentIngredient);
-    }
-
-    /// <summary>
-    /// Relays mixingmotion-display request to the area displayer
-    /// </summary>
-    /// <param name="toDisplay"></param>
-    public void DisplayMotion(MixingMotion toDisplay)
-    {
-        m_SelectionAreaDisplayer.DisplayMixingMotion(toDisplay);
+        SelectionAreaDisplay.DisplayIngredient(CurrentIngredient);
     }
 }

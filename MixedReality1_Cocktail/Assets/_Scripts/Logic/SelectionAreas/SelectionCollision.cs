@@ -1,34 +1,31 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
+
 
 [RequireComponent(typeof(BoxCollider))]
 public class SelectionCollision : MonoBehaviour {
 
-    private SelectionArea m_OwningSelectionArea;
+    public UnityAction<bool> OnSelectionChanged;
 
-    public void Init(SelectionArea owner)
-    {
-        m_OwningSelectionArea = owner;
-    }
-
-    /// <summary>
-    /// Called, when other objects stays in collision box. Invokes event, when an ingredient was selected
-    /// </summary>
-    /// <param name="other"></param>
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Body"))
         {
-            m_OwningSelectionArea.CurrentTimeInArea += Time.deltaTime;
-            if (m_OwningSelectionArea.CurrentTimeInArea > m_OwningSelectionArea.TimeUntilSelected)
+            if(null != OnSelectionChanged)
             {
-                m_OwningSelectionArea.CurrentTimeInArea = 0.0f;
-                m_OwningSelectionArea.IngredientWasSelected();
+                OnSelectionChanged.Invoke(true);
             }
         } 
     }
 
     private void OnTriggerExit(Collider other)
     {
-        m_OwningSelectionArea.CurrentTimeInArea = 0.0f;
+        if (other.CompareTag("Body"))
+        {
+            if (null != OnSelectionChanged)
+            {
+                OnSelectionChanged.Invoke(false);
+            }
+        }
     }
 }

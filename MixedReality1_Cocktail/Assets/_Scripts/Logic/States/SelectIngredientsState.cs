@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
+
 
 public class SelectIngredientsState : State
 {
@@ -14,12 +16,16 @@ public class SelectIngredientsState : State
 
     private Ingredient[] m_SelectedIngredients;
 
+    // List of areas which have been selected (hovered over) by a Kinect Hand
+    private List<SelectionArea> m_CurrentlyHoveredAreas = new List<SelectionArea>();
+
     private void Start()
     {
         // Register function listening to event, when player enters seleciton area
         foreach (SelectionArea area in LogicManager.SelectionAreas)
         {
-            area.OnAreaWasSelected += OnIngredientWasSelected;
+            area.OnAreaHoverEnterEvent += OnAreaHoverEnter;
+            area.OnAreaHoverLeaveEvent += OnAreaHoverLeave;
             area.TimeUntilSelected = m_TimeUntilSelected;
         }
 
@@ -76,12 +82,27 @@ public class SelectIngredientsState : State
         }
     }
 
-    /// <summary>
-    /// Invoked by SelectionArea, once an ingredient was selected
-    /// </summary>
-    private void OnIngredientWasSelected(Ingredient selectedIngredient)
+    private void OnAreaHoverEnter(SelectionArea selectedArea)
     {
-        m_SelectedIngredients[m_CurrentNumberOfSelectedIngredients] = selectedIngredient;
+        if (!m_CurrentlyHoveredAreas.Contains(selectedArea))
+        {
+            m_CurrentlyHoveredAreas.Add(selectedArea);
+        } 
+        // TODO: Handle Selection Timer and highlight selected area
+    }
+
+    private void OnAreaHoverLeave(SelectionArea selectedArea)
+    {
+        if (m_CurrentlyHoveredAreas.Contains(selectedArea))
+        {
+            m_CurrentlyHoveredAreas.Remove(selectedArea);
+        }
+    }
+
+    private void FinalizeIngredientSelection()
+    {
+
+        m_SelectedIngredients[m_CurrentNumberOfSelectedIngredients] = m_CurrentlyHoveredAreas[0].CurrentIngredient;
         m_CurrentNumberOfSelectedIngredients++;
         ShuffleIngredientsInSelectionArea();
         if (m_CurrentNumberOfSelectedIngredients == m_NumberOfIngredientChoices)

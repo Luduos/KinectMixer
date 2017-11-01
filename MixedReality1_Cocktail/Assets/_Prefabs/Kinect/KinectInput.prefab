@@ -19,6 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4542583384557138}
+  - component: {fileID: 114381748177542236}
   m_Layer: 0
   m_Name: KinectInput
   m_TagString: Untagged
@@ -872,6 +873,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92ab5bea6110edb4081e490c0982748d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114381748177542236
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1008399971596708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4de1221e9e79d14f80e42226d0683e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_BodySourceManager: {fileID: 114042209028852476}
+  m_KinectHandPrefab: {fileID: 114109114144896900, guid: c2a05dd6c395f8845bfc88a470626bbb,
+    type: 2}
 --- !u!114 &114618853882177970
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -36,7 +36,7 @@ public class MixingMotionState : State
             if(m_PossibleMixingMotions.Length <= i)
                 break;
 
-            selectionAreas[i].DisplayMotion(m_PossibleMixingMotions[i]);
+            selectionAreas[i].SelectionAreaDisplay.DisplayMixingMotion(m_PossibleMixingMotions[i]);
         }
     }
 

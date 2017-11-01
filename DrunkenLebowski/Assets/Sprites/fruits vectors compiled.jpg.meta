@@ -1,0 +1,200 @@
+fileFormatVersion: 2
+guid: b160c93d45b76400b94fc6f72afcad0d
+timeCreated: 1508975880
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: fruits vectors compiled_0
+    21300002: fruits vectors compiled_1
+    21300004: fruits vectors compiled_2
+  externalObjects: {}
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: fruits vectors compiled_0
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 198
+        width: 127
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 26.402962, y: 30.14679}
+        - {x: -0.29049683, y: 17.359222}
+        - {x: -26.003136, y: 20.165924}
+        - {x: -63.5, y: 40.5}
+        - {x: -59.142704, y: 20.925232}
+        - {x: -59.868916, y: 3.0729828}
+        - {x: -45.70972, y: -23.41777}
+        - {x: -18.523048, y: -39.358597}
+        - {x: 34.49144, y: -36.1427}
+        - {x: 63.5, y: -9.272705}
+        - {x: 43.89215, y: 0.25465393}
+        - {x: 54.422287, y: 23.282196}
+        - {x: 51.88054, y: 40.5}
+      - - {x: 39.210236, y: 40.5}
+        - {x: 41.388885, y: 40.185547}
+        - {x: 47.198624, y: 40.185547}
+        - {x: 47.198624, y: 33.649597}
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fruits vectors compiled_1
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 34
+        width: 113
+        height: 123
+      alignment: 9
+      pivot: {x: 0.49441376, y: 0.49114338}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -13.550041, y: 59.32135}
+        - {x: 0.43095398, y: 40.31665}
+        - {x: -26.426208, y: 28.833672}
+        - {x: -50.69027, y: 2.6764603}
+        - {x: -56.5, y: -53.51162}
+        - {x: -28.430893, y: -60.63078}
+        - {x: 29.754791, y: -55.40911}
+        - {x: 56.5, y: -15.022156}
+        - {x: 52.87822, y: 10.929428}
+        - {x: 54.974686, y: 34.01175}
+        - {x: 33.987297, y: 61.5}
+      - - {x: 39.126724, y: -58.64454}
+        - {x: 39.126724, y: -49.203724}
+        - {x: 42.03157, y: -41.94156}
+        - {x: 41.305374, y: -44.846428}
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: fruits vectors compiled_2
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 35
+        width: 123
+        height: 122
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 10.642395, y: 48.875854}
+        - {x: -11.3910675, y: 48.654327}
+        - {x: -42.955276, y: -2.7190323}
+        - {x: -48.360962, y: -20.821457}
+        - {x: -58.769363, y: -34.483585}
+        - {x: -59.32135, y: -59.547565}
+        - {x: 25.881134, y: -55.47147}
+        - {x: 61.5, y: -42.84459}
+        - {x: 60.12735, y: -8.898399}
+        - {x: 47.539246, y: 31.016861}
+        - {x: 29.546478, y: 58.09514}
+      physicsShape: []
+      tessellationDetail: 0
+    outline: []
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,278 @@
+fileFormatVersion: 2
+guid: fb0e4957c61db432cb1ad8e89c1cf2cd
+timeCreated: 1508975511
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: alcoholic drinks compiled_0
+    21300002: alcoholic drinks compiled_1
+    21300004: alcoholic drinks compiled_2
+    21300006: alcoholic drinks compiled_3
+    21300008: alcoholic drinks compiled_4
+    21300010: alcoholic drinks compiled_5
+    21300012: alcoholic drinks compiled_6
+    21300014: alcoholic drinks compiled_7
+  externalObjects: {}
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: alcoholic drinks compiled_0
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 351
+        width: 61
+        height: 187
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12.3155365, y: 93.5}
+        - {x: -13.975693, y: 58.6369}
+        - {x: -27.656631, y: 36.76837}
+        - {x: -30.5, y: -93.5}
+        - {x: 30.5, y: -93.5}
+        - {x: 29.27295, y: 34.975647}
+        - {x: 14.601967, y: 59.726868}
+        - {x: 15.043182, y: 91.68152}
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: alcoholic drinks compiled_1
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 316
+        width: 130
+        height: 300
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -65, y: 150}
+        - {x: -65, y: -150}
+        - {x: 65, y: -150}
+        - {x: 65, y: 150}
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: alcoholic drinks compiled_2
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 317
+        width: 130
+        height: 300
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -65, y: 150}
+        - {x: -65, y: -150}
+        - {x: 65, y: -150}
+        - {x: 65, y: 150}
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: alcoholic drinks compiled_3
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 316
+        width: 130
+        height: 300
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -65, y: 150}
+        - {x: -65, y: -150}
+        - {x: 65, y: -150}
+        - {x: 65, y: 150}
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: alcoholic drinks compiled_4
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 16
+        width: 130
+        height: 300
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -65, y: 150}
+        - {x: -65, y: -150}
+        - {x: 65, y: -150}
+        - {x: 65, y: 150}
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: alcoholic drinks compiled_5
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 78
+        width: 52
+        height: 219
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11.452423, y: 108.59079}
+        - {x: -12.311157, y: 46.88759}
+        - {x: -21.806595, y: 33.849518}
+        - {x: -26, y: -109.5}
+        - {x: 26, y: -109.5}
+        - {x: 26, y: 33.703354}
+        - {x: 13.825867, y: 45.953842}
+        - {x: 11.452423, y: 107.68155}
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: alcoholic drinks compiled_6
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 79
+        width: 75
+        height: 169
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21.133972, y: 84.5}
+        - {x: -17.900116, y: 51.26178}
+        - {x: -15.394562, y: 24.548767}
+        - {x: -35.872192, y: 7.175766}
+        - {x: -37.5, y: -84.5}
+        - {x: 37.5, y: -84.5}
+        - {x: 37.148315, y: 3.9812164}
+        - {x: 15.417725, y: 23.588104}
+        - {x: 17.121307, y: 53.283234}
+        - {x: 19.315552, y: 84.5}
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: alcoholic drinks compiled_7
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 16
+        width: 130
+        height: 300
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -65, y: 150}
+        - {x: -65, y: -150}
+        - {x: 65, y: -150}
+        - {x: 65, y: 150}
+      physicsShape: []
+      tessellationDetail: 0
+    outline: []
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

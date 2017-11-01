@@ -1,0 +1,179 @@
+fileFormatVersion: 2
+guid: 5d5bff10a515d44d7a295ffaf8d66668
+timeCreated: 1509031496
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: cocktail shaker_0
+    21300002: cocktail shaker_1
+  externalObjects: {}
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: 0
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: cocktail shaker_0
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 840
+        width: 177
+        height: 119
+      alignment: 9
+      pivot: {x: 0.9689096, y: 0.03826096}
+      border: {x: 0, y: 3, z: 0, w: 0}
+      outline:
+      - - {x: -66.23157, y: 54.731567}
+        - {x: -79.72406, y: -55}
+        - {x: -12.408661, y: -55}
+        - {x: 87, y: -55}
+        - {x: 78.69751, y: 47.31427}
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: cocktail shaker_1
+      rect:
+        serializedVersion: 2
+        x: 326
+        y: 37
+        width: 353
+        height: 814
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 14, y: 0, z: 10, w: 0}
+      outline:
+      - - {x: 79.156494, y: 395.37903}
+        - {x: -89.306366, y: 399.8294}
+        - {x: -141.45093, y: 364.41882}
+        - {x: -168.5827, y: 283.15826}
+        - {x: -168.5827, y: 150.60822}
+        - {x: -115.17816, y: -387.21503}
+        - {x: -47.546326, y: -406.5}
+        - {x: 65.598755, y: -403.81848}
+        - {x: 124.07892, y: -384.9948}
+        - {x: 164.22137, y: 102.48596}
+        - {x: 167.23022, y: 281.57208}
+        - {x: 136.55243, y: 367.1933}
+      physicsShape: []
+      tessellationDetail: 0
+    outline:
+    - - {x: -81.69934, y: 459.3319}
+      - {x: -85.68878, y: 337.016}
+      - {x: -135.18726, y: 310.8919}
+      - {x: -150.34024, y: 263.8553}
+      - {x: -174.52087, y: 229.41626}
+      - {x: -139.79663, y: -221.13287}
+      - {x: -115.67728, y: -441.07736}
+      - {x: -47.948914, y: -457.70816}
+      - {x: 48.33612, y: -459.65976}
+      - {x: 122.36749, y: -437.54538}
+      - {x: 168.08643, y: 73.736084}
+      - {x: 178.1911, y: 229.48688}
+      - {x: 149.54785, y: 261.0526}
+      - {x: 131.11194, y: 312.53882}
+      - {x: 86.70923, y: 340.10016}
+      - {x: 83.151794, y: 457.87946}
+    physicsShape:
+    - - {x: -500, y: 500}
+      - {x: -500, y: -500}
+      - {x: 500, y: -500}
+      - {x: 500, y: 500}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

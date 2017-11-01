@@ -1,0 +1,211 @@
+fileFormatVersion: 2
+guid: fa902e930479a48f984fa176484cf639
+timeCreated: 1508975681
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: cold drinks compiled_0
+    21300002: cold drinks compiled_1
+    21300004: cold drinks compiled_2
+    21300006: cold drinks compiled_3
+  externalObjects: {}
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: cold drinks compiled_0
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 178
+        width: 190
+        height: 389
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -58.2099, y: 192.33588}
+        - {x: -74.02286, y: 161.51624}
+        - {x: -91.55844, y: 123.17352}
+        - {x: -92.83588, y: -155.54576}
+        - {x: -55.904327, y: -186.33696}
+        - {x: 43.061005, y: -193.41794}
+        - {x: 95, y: -155.68954}
+        - {x: 93.19797, y: 125.39465}
+        - {x: 72.91785, y: 171.05743}
+        - {x: 49.553375, y: 193.41791}
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: cold drinks compiled_1
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 178
+        width: 191
+        height: 390
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -47.88922, y: 193.91791}
+        - {x: -72.1084, y: 165.10223}
+        - {x: -91.26349, y: 123.32178}
+        - {x: -92.253845, y: -153.88164}
+        - {x: -59.69525, y: -185.66249}
+        - {x: 41.30481, y: -191.75381}
+        - {x: 67.32037, y: -181.47423}
+        - {x: 94.41791, y: -157.12782}
+        - {x: 94.19586, y: 128.63025}
+        - {x: 73.85596, y: 170.51245}
+        - {x: 39.232727, y: 193.91797}
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: cold drinks compiled_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 177
+        width: 190
+        height: 390
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -50.635437, y: 193.91797}
+        - {x: -75.7643, y: 176.8097}
+        - {x: -95, y: 126.06906}
+        - {x: -94.65165, y: -154.25146}
+        - {x: -48.471313, y: -192.83588}
+        - {x: 42.103363, y: -193.40295}
+        - {x: 95, y: -152.79958}
+        - {x: 91.78566, y: 124.03177}
+        - {x: 74.54227, y: 167.01093}
+        - {x: 62.538116, y: 189.58972}
+      - - {x: 74.53415, y: 154.69391}
+        - {x: 74.53415, y: 156.85803}
+        - {x: 81.02652, y: 156.85803}
+        - {x: 81.02652, y: 154.69391}
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: cold drinks compiled_3
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 135
+        width: 300
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -150, y: 13}
+        - {x: -150, y: -13}
+        - {x: 150, y: -13}
+        - {x: 150, y: 13}
+      physicsShape: []
+      tessellationDetail: 0
+    outline: []
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -16,12 +16,15 @@ public class SelectionCollision : MonoBehaviour {
     /// <param name="other"></param>
     private void OnTriggerStay(Collider other)
     {
-        m_OwningSelectionArea.CurrentTimeInArea += Time.deltaTime;
-        if (m_OwningSelectionArea.CurrentTimeInArea > m_OwningSelectionArea.TimeUntilSelected)
+        if (other.CompareTag("Body"))
         {
-            m_OwningSelectionArea.CurrentTimeInArea = 0.0f;
-            m_OwningSelectionArea.IngredientWasSelected();
-        }
+            m_OwningSelectionArea.CurrentTimeInArea += Time.deltaTime;
+            if (m_OwningSelectionArea.CurrentTimeInArea > m_OwningSelectionArea.TimeUntilSelected)
+            {
+                m_OwningSelectionArea.CurrentTimeInArea = 0.0f;
+                m_OwningSelectionArea.IngredientWasSelected();
+            }
+        } 
     }
 
     private void OnTriggerExit(Collider other)

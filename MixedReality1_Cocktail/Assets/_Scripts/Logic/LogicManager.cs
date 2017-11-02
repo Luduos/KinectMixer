@@ -4,6 +4,9 @@ using System;
 public class LogicManager : MonoBehaviour {
 
     [SerializeField]
+    private KinectInput m_KinectInput;
+
+    [SerializeField]
     private State[] m_States;
     private int m_CurrentStateID = 0;
 
@@ -38,6 +41,18 @@ public class LogicManager : MonoBehaviour {
         }
     }
 
+    public KinectInput KinectInput
+    {
+        get
+        {
+            return m_KinectInput;
+        }
+
+        set
+        {
+            m_KinectInput = value;
+        }
+    }
 
     void Start ()
     {

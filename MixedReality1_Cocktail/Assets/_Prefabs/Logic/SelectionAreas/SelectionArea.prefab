@@ -115,7 +115,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1344279667945900}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.925, y: 0, z: 0}
+  m_LocalPosition: {x: 5.925, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224643787646695460}
@@ -206,7 +206,9 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1869086823348970}
-  m_Text: Fruit
+  m_Text: 'Non-
+
+    Alcohols'
   m_OffsetZ: 0
   m_CharacterSize: 0.15
   m_LineSpacing: 0.7
@@ -219,7 +221,7 @@ TextMesh:
   m_Font: {fileID: 12800000, guid: 6a4e1506d944e14428995dd5007147c7, type: 3}
   m_Color:
     serializedVersion: 2
-    rgba: 4278190080
+    rgba: 4294967295
 --- !u!114 &114552769165032356
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -243,20 +245,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_SelectionCollider: {fileID: 114552769165032356}
-  m_SelectionAreaDisplayer: {fileID: 114927314743109144}
+  m_SelectionAreaDisplay: {fileID: 114927314743109144}
   m_PossibleIngredients:
-  - m_Name: Banana
-    m_Sprite: {fileID: 21300000, guid: 3ac490d45f89c45498a5054bbb1a9454, type: 3}
-    m_Color: {r: 0.9448277, g: 1, b: 0, a: 1}
-  - m_Name: Apple
+  - m_Name: Sprite
+    m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+    m_Color: {r: 1, g: 1, b: 1, a: 1}
+  - m_Name: 'Orange
+
+      -Juice'
+    m_Sprite: {fileID: 21300000, guid: 51399d49f76f02449b1b6f5cac84b8fd, type: 3}
+    m_Color: {r: 1, g: 0.5019608, b: 0, a: 1}
+  - m_Name: 'Tomato
+
+      -Juice'
     m_Sprite: {fileID: 21300000, guid: d6e6bca445b9909428ca8c8205f372e9, type: 3}
     m_Color: {r: 0.76862746, g: 0, b: 0, a: 1}
-  - m_Name: Orange
-    m_Sprite: {fileID: 21300000, guid: 51399d49f76f02449b1b6f5cac84b8fd, type: 3}
-    m_Color: {r: 1, g: 0.68275857, b: 0, a: 0}
-  - m_Name: Lime
-    m_Sprite: {fileID: 21300000, guid: 42fb9c07750d2f64ba69a30254f41df0, type: 3}
-    m_Color: {r: 0, g: 1, b: 0, a: 0}
 --- !u!114 &114927314743109144
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -268,8 +271,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5202675c2beadf846af943e306178461, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SpriteRenderer: {fileID: 212133384935156620}
+  m_DisplaySprite: {fileID: 212133384935156620}
+  m_BackgroundSprite: {fileID: 212174435002545938}
   m_Text: {fileID: 102594399877074542}
+  m_OnHoveredColor: {r: 1, g: 0.5, b: 0, a: 0.2509804}
+  m_OnInvalidHoveringColor: {r: 1, g: 0, b: 0, a: 0.2509804}
+  m_OnSelectedColor: {r: 0, g: 1, b: 0, a: 0.2509804}
 --- !u!212 &212133384935156620
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -349,7 +356,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 7bb3e60ddf961404db4f231d6651d523, type: 3}
-  m_Color: {r: 0.3455882, g: 1, b: 0.3455882, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 1

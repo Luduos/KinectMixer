@@ -123,10 +123,7 @@ public class BodySourceView : MonoBehaviour
             jointObj.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
             jointObj.name = jt.ToString();
             jointObj.transform.parent = body.transform;
-
-            BoxCollider jointCollider = jointObj.GetComponent<BoxCollider>();
-            jointCollider.isTrigger = true;
-            jointObj.tag = "Body";
+            
         }
         
         return body;

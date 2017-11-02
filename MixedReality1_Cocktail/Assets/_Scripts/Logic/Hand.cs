@@ -3,14 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Hand : MonoBehaviour {
+    [SerializeField]
+    private SpriteRenderer CocktailSprite;
 
 	// Use this for initialization
 	void Start () {
 		
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+	public void ShowCocktailSprite(bool visible)
+    {
+        CocktailSprite.gameObject.SetActive(visible);
+    }
 }

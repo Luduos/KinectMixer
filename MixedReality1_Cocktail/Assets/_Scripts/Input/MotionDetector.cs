@@ -1,20 +1,25 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
+using System.Collections.Generic;
 
-public class MotionDetector : MonoBehaviour {
+public class MotionDetector : MonoBehaviour, KinectGestures.GestureListenerInterface
+{
 
     public UnityAction<int> OnMotionSelected;
+
+    private Dictionary<KinectGestures.Gestures, MixingMotion> m_MixingMotionDictionary = new Dictionary<KinectGestures.Gestures, MixingMotion>();
+
+    public void SetPossibleMotions(MixingMotion[] possibleMotions)
+    {
+        foreach(MixingMotion motion in possibleMotions)
+        {
+            m_MixingMotionDictionary.Add(motion.m_Gesture, motion);
+        }
+    }
 
 	void Update () {
         DummyMotionDetection();
 	}
-
-    private void DetectMotions()
-    {
-        // TODO: Actually put Kinnect code in here
-
-
-    }
 
     /// <summary>
     /// Checks for number-keys "1", "2" and "3" on top of the alphanumerical keyboard, if one was pressed.
@@ -37,5 +42,44 @@ public class MotionDetector : MonoBehaviour {
                 OnMotionSelected.Invoke(2);
             }
         }
+    }
+
+    public void UserDetected(long userId, int userIndex)
+    {
+    }
+
+    public void UserLost(long userId, int userIndex)
+    {
+    }
+
+    public void GestureInProgress(long userId, int userIndex, KinectGestures.Gestures gesture, float progress, KinectInterop.JointType joint, Vector3 screenPos)
+    {
+    }
+
+    public bool GestureCompleted(long userId, int userIndex, KinectGestures.Gestures gesture, KinectInterop.JointType joint, Vector3 screenPos)
+    {
+        if (this.gameObject.activeSelf)
+        {
+            switch (gesture)
+            {
+                case KinectGestures.Gestures.SwipeLeft:
+                case KinectGestures.Gestures.SwipeRight:
+                    OnMotionSelected.Invoke(1);
+                    break;
+                case KinectGestures.Gestures.SwipeDown:
+                case KinectGestures.Gestures.SwipeUp:
+                    OnMotionSelected.Invoke(0);
+                    break;
+                default:
+                    OnMotionSelected.Invoke(2);
+                    break;
+            }
+        }
+        return true;
+    }
+
+    public bool GestureCancelled(long userId, int userIndex, KinectGestures.Gestures gesture, KinectInterop.JointType joint)
+    {
+        return true;
     }
 }

@@ -15,7 +15,7 @@ public class KinectInput : MonoBehaviour {
     private string leftHandName = "Left Hand";
     private string rightHandName = "Right Hand";
 
-    IList<Body> m_Bodies;
+    List<ulong> m_Bodies = new List<ulong>();
     // Use this for initialization
     void Start () {
         /**
@@ -81,6 +81,7 @@ public class KinectInput : MonoBehaviour {
         }
 
         List<ulong> kinectTrackedIds = GetKinectTrackedIds(currentBodies);
+        m_Bodies = kinectTrackedIds;
 
         DeleteUntrackedBodies(kinectTrackedIds);
 
@@ -155,8 +156,6 @@ public class KinectInput : MonoBehaviour {
         return body;
     }
 
-
-
     private void RefreshBodyObject(Body body, GameObject bodyObject)
     {
         Windows.Kinect.Joint leftHandJoint = body.Joints[JointType.HandLeft];
@@ -166,9 +165,43 @@ public class KinectInput : MonoBehaviour {
         Windows.Kinect.Joint rightHandJoint = body.Joints[JointType.HandRight];
         Transform rightHandTransform = bodyObject.transform.Find(rightHandName);
         rightHandTransform.localPosition = GetVector3FromJoint(rightHandJoint);
+
+        JointOrientation lefthandOrientation = body.JointOrientations[JointType.WristLeft];
+        Quaternion leftRotationQuaternion = new Quaternion(lefthandOrientation.Orientation.X, lefthandOrientation.Orientation.Y, lefthandOrientation.Orientation.Z, lefthandOrientation.Orientation.W);
+        Vector3 leftEuler = leftRotationQuaternion.eulerAngles;
+        leftEuler = new Vector3(0, 0, leftEuler.z);
+        leftHandTransform.rotation = Quaternion.Euler(leftEuler);
+
+        JointOrientation righthandOrientation = body.JointOrientations[JointType.WristRight];
+        Quaternion rightRotationQuaternion = new Quaternion(righthandOrientation.Orientation.X, righthandOrientation.Orientation.Y, righthandOrientation.Orientation.Z, righthandOrientation.Orientation.W);
+        Vector3 rightEuler = rightRotationQuaternion.eulerAngles;
+        rightEuler = new Vector3(0, 0, rightEuler.z);
+        rightHandTransform.rotation = Quaternion.Euler(rightEuler);
+    }
+
+    public GameObject GetFirstFoundRightHand()
+    {
+        if (m_Bodies != null && m_Bodies.Count > 0)
+        {
+            GameObject firstBody = m_TrackedBodyObjects[m_Bodies[0]];
+            if(null != firstBody)
+            {
+                Transform rightHand = firstBody.transform.Find(rightHandName);
+                if (null != rightHand)
+                {
+                    return rightHand.gameObject;
+                }
+            } 
+        }
+        return null;
     }
 
     private static Vector3 GetVector3FromJoint(Windows.Kinect.Joint joint)
+    {
+        return new Vector3(joint.Position.X * 10, joint.Position.Y * 10, joint.Position.Z * 10);
+    }
+
+    private static Vector3 GetRotationFromJoint(Windows.Kinect.Joint joint)
     {
         return new Vector3(joint.Position.X * 10, joint.Position.Y * 10, joint.Position.Z * 10);
     }

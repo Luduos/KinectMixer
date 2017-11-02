@@ -22,10 +22,21 @@ public abstract class SelectionAreaDisplayer : MonoBehaviour
     /// <summary>
     /// Called, when collision area is touched, but not yet long enough to count as selected
     /// </summary>
-    public abstract  void HighlightIngredientOnTouch();
+    public abstract  void HighlightOnHovered();
+
+    /// <summary>
+    /// Called, when multiple collision areas were touched
+    /// </summary>
+    public abstract void HighlightOnInvalidHovered();
 
     /// <summary>
     /// Called, when an ingredient was successfully selected
     /// </summary>
     public abstract  void HighlightOnSelected();
+
+    /// <summary>
+    /// Back to normal display
+    /// </summary>
+    public abstract void NoHighlights();
+
 }

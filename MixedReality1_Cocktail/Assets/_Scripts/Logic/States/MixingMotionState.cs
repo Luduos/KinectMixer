@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections;
 
 
 public class MixingMotionState : State
@@ -10,11 +11,18 @@ public class MixingMotionState : State
     [SerializeField]
     private MixingMotion[] m_PossibleMixingMotions;
 
+   
+
+
+    [SerializeField]
+    private float m_DisplaySelectedMotionTime = 1.5f;
+
     private void Start()
     {
         if(null != m_MotionDetector)
         {
             m_MotionDetector.OnMotionSelected += SelectMotion;
+            m_MotionDetector.SetPossibleMotions(m_PossibleMixingMotions);
             ActivateMotionDetector(false);
         }
     }
@@ -38,6 +46,10 @@ public class MixingMotionState : State
 
             selectionAreas[i].SelectionAreaDisplay.DisplayMixingMotion(m_PossibleMixingMotions[i]);
         }
+
+        GameObject rightHand = LogicManager.KinectInput.GetFirstFoundRightHand();
+        rightHand.GetComponent<Hand>().ShowCocktailSprite(true);
+
     }
 
     /// <summary>
@@ -52,12 +64,30 @@ public class MixingMotionState : State
             SessionInformation info = LogicManager.CurrentSessionInfo;
             info.MotionOfSession = m_PossibleMixingMotions[motionID];
             LogicManager.CurrentSessionInfo = info;
-            OnLeaveState();
+            ActivateMotionDetector(false);
+
+            StartCoroutine(OnDisplaySelectedMotion(motionID));
         }
         else
         {
             print("Invalid motion ID");
         }
+    }
+
+    private IEnumerator OnDisplaySelectedMotion(int motionID)
+    {
+        LogicManager.SelectionAreas[motionID].SelectionAreaDisplay.HighlightOnSelected();
+
+        float waitingTime = 0.0f;
+        while(waitingTime < m_DisplaySelectedMotionTime)
+        {
+            waitingTime += Time.deltaTime;
+            yield return null;
+        }
+        LogicManager.SelectionAreas[motionID].SelectionAreaDisplay.NoHighlights();
+
+        OnLeaveState();
+        yield return null;
     }
 
     /// <summary>

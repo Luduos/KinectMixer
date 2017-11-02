@@ -4,12 +4,7 @@ using System;
 [Serializable]
 public struct MixingMotion
 {
-    public enum MixingMotionType
-    {
-        Horizontal,
-        Vertical,
-        Circle
-    }
+    public KinectGestures.Gestures m_Gesture;
 
     public string m_Name;
     /// <summary>
@@ -20,5 +15,4 @@ public struct MixingMotion
     /// Sprite, that's displayed on the final result. (e.g. foam on top of the cocktail)
     /// </summary>
     public Sprite m_FinalDisplaySprite;
-    public MixingMotionType m_Type;
 }

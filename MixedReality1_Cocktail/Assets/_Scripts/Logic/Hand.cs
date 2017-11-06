@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Hand : MonoBehaviour {
     [SerializeField]
@@ -13,6 +11,9 @@ public class Hand : MonoBehaviour {
 	
 	public void ShowCocktailSprite(bool visible)
     {
-        CocktailSprite.gameObject.SetActive(visible);
+        if(null != CocktailSprite)
+        {
+            this.gameObject.SetActive(visible);
+        }
     }
 }

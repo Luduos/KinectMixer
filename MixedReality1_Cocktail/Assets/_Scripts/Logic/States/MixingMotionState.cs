@@ -48,8 +48,18 @@ public class MixingMotionState : State
         }
 
         GameObject rightHand = LogicManager.KinectInput.GetFirstFoundRightHand();
-        rightHand.GetComponent<Hand>().ShowCocktailSprite(true);
-
+        if(null == rightHand)
+        {
+            Hand hand = FindObjectOfType<Hand>();
+            if(null != hand)
+            {
+                rightHand = hand.gameObject;
+            }
+        }
+        if(null!= rightHand)
+        {
+            rightHand.GetComponent<Hand>().ShowCocktailSprite(true);
+        }
     }
 
     /// <summary>

@@ -15,4 +15,6 @@ public struct MixingMotion
     /// Sprite, that's displayed on the final result. (e.g. foam on top of the cocktail)
     /// </summary>
     public Sprite m_FinalDisplaySprite;
+
+    public Color m_FoamColor;
 }

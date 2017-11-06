@@ -4,7 +4,7 @@ using System.Collections;
 public class DisplayResultState : State
 {
     [SerializeField]
-    private float m_TimeToWaitUntilRestart = 3.0f;
+    private float m_TimeToWaitUntilRestart = 5.0f;
 
     [SerializeField]
     private FinalResultDisplayer m_FinalResultDisplay;
@@ -42,10 +42,12 @@ public class DisplayResultState : State
         FinalResult finalResult = new FinalResult();
         finalResult.m_Color = new Color(finalR, finalG, finalB);
         finalResult.m_Name = finalResultName;
+        finalResult.m_Foam = logicManager.CurrentSessionInfo.MotionOfSession.m_FinalDisplaySprite;
+        finalResult.m_FoamColor = logicManager.CurrentSessionInfo.MotionOfSession.m_FoamColor;
         m_FinalResultDisplay.DisplayFinalResult(finalResult);
 
         // Example of how to start the coroutine to leave the state after a set amount of seconds.
-        //StartCoroutine(LeaveAfterDisplayingResult());
+        StartCoroutine(LeaveAfterDisplayingResult());
     }
 
 
